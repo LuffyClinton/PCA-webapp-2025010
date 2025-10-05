@@ -67,4 +67,3 @@ MIT 开源许可证，可自由使用、修改与分发。
 
 ## 联系开发者
 - 邮箱：gonghd3@mail2.sysu.edu.cn
-- 个人博客：[https://gonghd3.github.io/](https://gonghd3.github.io/)

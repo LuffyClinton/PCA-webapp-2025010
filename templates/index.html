@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PCA分析工具</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PCA主成分分析工具</h1>
+        <p>上传Excel文件（.xlsx或.xls），自动生成PCA分析结果（包含可视化图表和详细数据）</p>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <div class="upload-box">
+                <input type="file" name="file" accept=".xlsx, .xls" required>
+                <input type="submit" value="开始分析">
+            </div>
+        </form>
+        
+        <div class="hint">
+            <h3>使用说明</h3>
+            <ul>
+                <li>Excel文件需包含表头（第一行为特征名）</li>
+                <li>数据应为数值型（不含文本或空值）</li>
+                <li>分析结果将包含：主成分矩阵、方差解释率、异常检测、特征重要性等</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

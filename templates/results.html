@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PCA分析结果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PCA分析结果</h1>
+        
+        <div class="summary">
+            <h2>分析摘要</h2>
+            <ul>
+                <li>最优主成分数：{{ n_components }}（累积方差解释率≥90%）</li>
+                <li>检测到异常样本数：{{ n_outliers }}（总样本数：{{ total_samples }}）</li>
+                <li>平均重构误差：{{ reconstruction_error|round(4) }}</li>
+                <li>前3个重要特征：{{ top_features[0] }}, {{ top_features[1] }}, {{ top_features[2] }}</li>
+            </ul>
+            <a href="{{ url_for('download_file', filename=excel_filename) }}" class="download-btn">下载完整Excel结果</a>
+        </div>
+        
+        <div class="visualizations">
+            <h2>可视化结果</h2>
+            
+            <div class="plot-box">
+                <h3>1. PCA综合仪表盘</h3>
+                <img src="{{ vis_paths['dashboard'] }}" alt="PCA Dashboard">
+            </div>
+            
+            <div class="plot-box">
+                <h3>2. 双标图（Biplot）</h3>
+                <img src="{{ vis_paths['biplot'] }}" alt="PCA Biplot">
+            </div>
+            
+            <div class="plot-box">
+                <h3>3. 原始数据vs重构数据</h3>
+                <img src="{{ vis_paths['reconstruction'] }}" alt="Reconstruction Comparison">
+            </div>
+            
+            <div class="plot-box">
+                <h3>4. 特征相关性矩阵</h3>
+                <img src="{{ vis_paths['correlation'] }}" alt="Feature Correlation">
+            </div>
+            
+            <div class="plot-box">
+                <h3>5. 特征重要性排序</h3>
+                <img src="{{ vis_paths['importance'] }}" alt="Feature Importance">
+            </div>
+        </div>
+        
+        <a href="{{ url_for('upload_file') }}" class="back-btn">返回上传页面</a>
+    </div>
+</body>
+</html>

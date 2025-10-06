@@ -462,4 +462,5 @@ def download_file(filename):
 
 # 启动应用
 if __name__ == '__main__':
-    app.run(debug=True)  # 开发模式（生产环境需改为app.run(host='0.0.0.0', port=80)）
+
+    app.run(host='0.0.0.0', port=80) # 开发模式（生产环境需改为app.run(host='0.0.0.0', port=80)）

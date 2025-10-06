@@ -26,7 +26,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(RESULTS_FOLDER, exist_ok=True)
 
 
-# PCA类（复用你的核心代码，略作修改适配Web环境）
+# PCA类（复用python核心代码，略作修改适配Web环境）
 class PCA:
     def __init__(self, n_components=None, scaling='standard', random_state=None):
         self.n_components = n_components
@@ -464,3 +464,4 @@ def download_file(filename):
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=80) # 开发模式（生产环境需改为app.run(host='0.0.0.0', port=80)）
+
